@@ -1,0 +1,32 @@
+.app-wrapper {
+  display: flex;
+  margin: 0 auto;
+  min-height: 100%;
+  flex-direction: column;
+
+  .routed-components {
+    padding-top: 5em;
+  }
+
+  .background-image-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .13;
+    background-image: url("../../images/misc/tumi-face.png");
+    background-repeat: repeat;
+    z-Index: -99;
+  }
+
+  .background-tint {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .7);
+    z-Index: -99;
+  }
+}

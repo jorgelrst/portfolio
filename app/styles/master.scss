@@ -1,0 +1,41 @@
+/* Set global styles here */
+
+@import './colors';
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500|Open+Sans:300,400,600|Share+Tech:400);
+$tech: "Share Tech", "Helvetica Neue", "sans-serif";
+$sans: "Open Sans", "Helvetica Neue", "sans-serif";
+$roboto: "Roboto", "Helvetica Neue", "sans-serif";
+
+::selection { background: $greenActive !important }
+
+:global(:root body) {
+  font-family: $tech !important;
+  overflow: hidden;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  color: $primaryColor;
+
+  /* fallback in case of IE8 || older, or in case video doesn't load, ex. slower connections  */
+  background: $black !important;
+  background-attachment: fixed !important;
+  background-size: cover !important;
+}
+
+a {
+  color: $primaryColor;
+  text-decoration: none !important;
+  transition: 0.12s ease-in-out;
+
+  &:hover {
+    color: darken($blackLighten, 15%);
+  }
+}
