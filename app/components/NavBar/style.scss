@@ -1,4 +1,5 @@
 @import 'app/styles/colors';
+@import 'app/styles/animations';
 
 .nav-bar {
   padding: 0;
@@ -15,10 +16,43 @@
   .ml-auto {
     margin-right: 1em;
     text-transform: uppercase;
-    font-size: 1.2em;
+    font-size: 1.05em;
 
     a {
       margin-right: .5em;
+
+      &:hover {
+        color: $primaryColor;
+      }
+    }
+
+    .link-inner {
+      position: relative;
+    }
+    
+    .link-inner::after {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: -.1em;
+      width: 110%;
+      height: 100%;
+      padding-bottom: 1.4em;
+      border-bottom: 0.13em solid $primaryColor;
+      border-bottom-left-radius: .15em;
+      border-bottom-right-radius: .15em;
+      content: '';
+    }
+
+    .link-inner:hover {
+      &::after {
+        display: block;
+        animation: blinker 0.25s linear infinite;
+      }
+    }
+
+    .link-inner.active {
+      color: $blue;
     }
   }
 
@@ -43,7 +77,5 @@
       }
     }
   }
-
-
 
 }

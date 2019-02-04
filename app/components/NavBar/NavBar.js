@@ -14,10 +14,17 @@ class NavBar extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      navEnum: {
+        'HOME': 0,
+        'BLOG': 1,
+      }
+    };
   }
 
   render() {
+    const { navEnum } = this.state;
+    const activePathname = window.location.pathname.substr(1).toUpperCase() || 'HOME';
 
     return (
       <Navbar className="nav-bar" collapseOnSelect fixed="top" expand="md" bg="dark">
@@ -26,12 +33,12 @@ class NavBar extends React.Component {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ml-auto">
             <Nav.Link>
-              <Link to="/">
+              <Link className={`link-inner ${(navEnum[activePathname] === navEnum.HOME) ? 'active' : ''}`} to="/">
                 Home
               </Link>
             </Nav.Link>
             <Nav.Link>
-              <Link to="/blog">
+              <Link className={`link-inner ${(navEnum[activePathname] === navEnum.BLOG) ? 'active' : ''}`} to="/blog">
                 Blog
               </Link>
             </Nav.Link>
