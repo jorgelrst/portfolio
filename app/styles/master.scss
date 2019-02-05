@@ -39,3 +39,12 @@ a {
     color: darken($blackLighten, 15%);
   }
 }
+
+.landing-section {
+  padding-top: 2.5em;
+  padding-bottom: 2.5em;
+
+  &:first-child {
+    margin-top: 2em;
+  }
+}

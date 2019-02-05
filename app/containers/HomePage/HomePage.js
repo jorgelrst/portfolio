@@ -23,22 +23,24 @@ export default class HomePage extends React.PureComponent {
     const { loading, error } = this.props;
 
     return (
-      <article>
+      <section className="landing-section">
         <Helmet>
           <title>Home Page</title>
           <meta name="description" content="Landing Page" />
         </Helmet>
         <div className="home-page">
-          <section>
+          <section className="intro">
             <Row>
-              <Col>George Li</Col>
+              <Col><h1 className="name"><div>Jorge</div></h1></Col>
             </Row>
             <Row>
-              <Col>Full Stack Developer @ Switchboard</Col>
+              <Col>
+                <h2 className="occupation"><code>Full Stack Developer @ <a href="https://www.onswitchboard.com" target="_blank">Switchboard</a></code></h2>
+              </Col>
             </Row>
           </section>
         </div>
-      </article>
+      </section>
     );
   }
 }

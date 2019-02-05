@@ -2,4 +2,77 @@
 
 .home-page {
   text-align: center;
+
+  .intro {
+    margin-top: 5em;
+
+    .name {
+      margin: 0;
+      font-size: 8.2em;
+      text-transform: uppercase;
+      letter-spacing: .25em;
+
+      div {
+        position: relative;
+        display: inline-block;
+        padding-left: .25em;
+
+        &::after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          opacity: .8;
+          z-index: -1;
+          content: '';
+        }
+      }
+    }
+
+    .occupation {
+      font-size: 1.15em;
+      letter-spacing: .13em;
+
+      code {
+        color: $blue;
+      }
+
+      a {
+        position: relative;
+
+        &::after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          padding-bottom: 1.3em;
+          border-bottom: .02em solid $primaryColor;
+          z-index: -1;
+          content: '';
+          transition: 0.12s ease-in-out;
+        }
+
+        &:hover::after {
+          border-bottom: .02em solid darken($blackLighten, 15%);
+        }
+      }
+    }
+
+  }
+}
+
+@media only screen and (max-width : 768px) {
+  .home-page {
+    .intro {
+      .name {
+        letter-spacing: .12em;
+
+        div {
+          padding-left: .08em;
+        }
+      }
+    }
+  }
 }

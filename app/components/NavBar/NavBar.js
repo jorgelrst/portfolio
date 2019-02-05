@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Link } from 'react-router-dom';
+import navEnum from 'enums/nav';
 import logo from 'images/logos/logo-white.png';
 
 import {
@@ -14,16 +15,11 @@ class NavBar extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      navEnum: {
-        'HOME': 0,
-        'BLOG': 1,
-      }
-    };
+    this.state = {};
   }
 
   render() {
-    const { navEnum } = this.state;
+    // note: the id's for each link are being listened to in <VideoBackground>
     const activePathname = window.location.pathname.substr(1).toUpperCase() || 'HOME';
 
     return (
@@ -33,12 +29,12 @@ class NavBar extends React.Component {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ml-auto">
             <Nav.Link>
-              <Link className={`link-inner ${(navEnum[activePathname] === navEnum.HOME) ? 'active' : ''}`} to="/">
+              <Link id="link-home" className={`link-inner ${(navEnum[activePathname] === navEnum.HOME) ? 'active' : ''}`} to="/">
                 Home
               </Link>
             </Nav.Link>
             <Nav.Link>
-              <Link className={`link-inner ${(navEnum[activePathname] === navEnum.BLOG) ? 'active' : ''}`} to="/blog">
+              <Link id="link-blog" className={`link-inner ${(navEnum[activePathname] === navEnum.BLOG) ? 'active' : ''}`} to="/blog">
                 Blog
               </Link>
             </Nav.Link>
